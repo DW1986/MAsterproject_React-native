@@ -104,7 +104,7 @@ export default class System extends React.Component {
                         Width_Layout : event.nativeEvent.layout.width,
                         Height_Layout : event.nativeEvent.layout.height
                     }, ()=> this.DetectOrientation())}>
-
+                        <Text style={{color:'red'}}> Bitte Landscape aktivieren und das Telefon drehen </Text>
                         <Text style={styles.TextStyle}> { this.state.OrientationStatus } </Text>
 
                     </View>
