@@ -1,8 +1,15 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, Dimensions} from 'react-native';
 import { Icon, Header} from 'native-base'
 import MapView from 'react-native-maps'
 
+const {width, height} = Dimensions.get('window')
+
+const SCREEN_HEIGHT = height
+const SCREEN_WIDTH = width
+const ASPECT_RATIO = width / height
+const LATTITUDE_DELTA = 0.0922
+const LONGITUDE_DELTA = LATTITUDE_DELTA * ASPECT_RATIO
 
 
 
@@ -17,6 +24,42 @@ export default class GoogleMaps extends React.Component {
             />
         ),
     };
+        constructor(props) {
+            super(props)
+
+            this.state = {
+                initialPosition: {
+                    latitude: 0,
+                    longitude: 0,
+                    latitudeDelta: 0,
+                    longitudeDelta: 0
+                },
+                markerPosition: {
+                    latitude: 0,
+                    longitude: 0
+                }
+            }
+
+        }
+
+        componentDidMount() {
+            navigator.geolocation.getCurrentPosition((position) => {
+                var lat = parseFloat(position.coords.latitude)
+                var long = parseFloat(position.coords.longitude)
+
+                var initialRegion = {
+                    latitude: lat,
+                    longitude: long,
+                    latitudeDelta: LATTITUDE_DELTA,
+                    longitudeDelta: LONGITUDE_DELTA
+                }
+                this.setState({initialPosition: initialRegion})
+                this.setState({markerPosition: initialRegion})
+            })
+
+
+        }
+
 
 
 
@@ -31,6 +74,15 @@ export default class GoogleMaps extends React.Component {
                     </View>
                 </Header >
                 <View style={styles.container}>
+                    <MapView
+                        style={styles.map}
+                        region={this.state.initialPosition}>
+
+                    <MapView.Marker
+                        coordinate={this.state.markerPosition}>
+                    </MapView.Marker>
+                    </MapView>
+
 
                 </View>
 
