@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image, TouchableOpacity, TextInput} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity, Button} from 'react-native';
 import { Icon, Header} from 'native-base'
 
 
@@ -12,7 +12,8 @@ export default class Colors extends React.Component {
         super(props)
         this.state = {
             value: 0,
-            value2: 0,
+            value2: 0
+
         }
     }
     static navigationOptions = {
@@ -46,12 +47,17 @@ export default class Colors extends React.Component {
         return <Image style={styles.images}
                       source={require('../assets/Buttons/Button_gruen_one.png')}/>
     }
+    renderWhite() {
+        if (this.state.value2 === 0)
+            return <Image style={styles.images}
+                          source={require('../assets/Buttons/Button_one.png')}/>
+
+    }
+
 
     renderCir() {
 
-        if(this.state.value2 === 1)
-
-        switch (this.state.value) {
+        switch (this.state.value ) {
             case 1  :
 
                 return <Image style={styles.images}
@@ -92,13 +98,15 @@ export default class Colors extends React.Component {
                     <View style={styles.container}>
 
 
-                            <TouchableOpacity  onPress={() => this.setState({value2: 1})}>
-                                {this.renderCir()}
+                            <TouchableOpacity  onPress={ this.renderCir()}>
+
+                                {this.renderWhite()}
 
 
 
                                 <Text> Value1: {this.state.value}</Text>
                                 <Text> Value2: {this.state.value2}</Text>
+
                             </TouchableOpacity>
 
 
@@ -108,13 +116,13 @@ export default class Colors extends React.Component {
                      </View>
 
                     <View style={styles.container}>
-                        <TouchableOpacity onPress={() => this.setState({value: 1,value2: 0})}>
+                        <TouchableOpacity onPress={() => this.setState({value: 1, value2:0})}>
                             {this.renderRed()}
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.setState({value: 2,value2: 0})}>
+                        <TouchableOpacity onPress={() => this.setState({value: 2, value2:0})}>
                             {this.renderBlue()}
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.setState({value: 3,value2: 0})}>
+                        <TouchableOpacity onPress={() => this.setState({value: 3, value2:0})}>
                             {this.renderGreen()}
                         </TouchableOpacity>
                     </View>

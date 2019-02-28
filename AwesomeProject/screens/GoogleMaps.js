@@ -29,14 +29,14 @@ export default class GoogleMaps extends React.Component {
 
             this.state = {
                 initialPosition: {
-                    latitude: 0,
-                    longitude: 0,
-                    latitudeDelta: 0,
-                    longitudeDelta: 0
+                    latitude: 51.133481,
+                    longitude: 10.018343,
+                    latitudeDelta:0.74424,
+                    longitudeDelta: 8.44788
                 },
                 markerPosition: {
-                    latitude: 0,
-                    longitude: 0
+                    latitude: 51.343479,
+                    longitude: 12.387772
                 }
             }
 
