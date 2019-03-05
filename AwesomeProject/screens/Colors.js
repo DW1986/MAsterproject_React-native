@@ -11,10 +11,9 @@ export default class Colors extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            value: 0,
-            value2: 0
+            leinwand: require('../assets/Buttons/Button_one.png'),
+            value:0};
 
-        }
     }
     static navigationOptions = {
         drawerIcon: ({tintColor}) => (
@@ -47,38 +46,30 @@ export default class Colors extends React.Component {
         return <Image style={styles.images}
                       source={require('../assets/Buttons/Button_gruen_one.png')}/>
     }
-    renderWhite() {
-        if (this.state.value2 === 0)
-            return <Image style={styles.images}
-                          source={require('../assets/Buttons/Button_one.png')}/>
 
+
+changeState(){
+
+    if(this.state.value === 1) {
+
+        this.setState({
+            leinwand: require('../assets/Buttons/Button_rot_one.png')
+        })
     }
-
-
-    renderCir() {
-
-        switch (this.state.value ) {
-            case 1  :
-
-                return <Image style={styles.images}
-                              source={require('../assets/Buttons/Button_two.png')}/>
-            case 2  :
-
-                return <Image style={styles.images}
-                              source={require('../assets/Buttons/Button_three.png')}/>
-            case 3  :
-
-                return <Image style={styles.images}
-                              source={require('../assets/Buttons/Button_four.png')}/>
-
-            default:
-                return <Image style={styles.images}
-                              source={require('../assets/Buttons/Button_one.png')}/>
-
-        }
-        return <Image style={styles.images}
-                      source={require('../assets/Buttons/Button_one.png')}/>
+   else if (this.state.value === 2) {
+        this.setState({
+            leinwand: require('../assets/Buttons/Button_blau_one.png')
+        })
     }
+    else if (this.state.value === 3){
+        this.setState({
+            leinwand: require('../assets/Buttons/Button_gruen_one.png')
+        })
+    }
+}
+
+
+
 
 
     render() {
@@ -98,14 +89,22 @@ export default class Colors extends React.Component {
                     <View style={styles.container}>
 
 
-                            <TouchableOpacity  onPress={ this.renderCir()}>
-
-                                {this.renderWhite()}
+                            <TouchableOpacity onPress={() =>this.changeState()}>
 
 
+                            <View>
+                                <Image
+                                    source={this.state.leinwand}
+                                    style={styles.images}
+                                />
 
-                                <Text> Value1: {this.state.value}</Text>
-                                <Text> Value2: {this.state.value2}</Text>
+                        </View>
+
+
+
+
+
+
 
                             </TouchableOpacity>
 
@@ -116,13 +115,13 @@ export default class Colors extends React.Component {
                      </View>
 
                     <View style={styles.container}>
-                        <TouchableOpacity onPress={() => this.setState({value: 1, value2:0})}>
+                        <TouchableOpacity onPress={() => this.setState({value:1})}>
                             {this.renderRed()}
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.setState({value: 2, value2:0})}>
+                        <TouchableOpacity onPress={() => this.setState({value: 2})}>
                             {this.renderBlue()}
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.setState({value: 3, value2:0})}>
+                        <TouchableOpacity onPress={() => this.setState({value: 3})}>
                             {this.renderGreen()}
                         </TouchableOpacity>
                     </View>
@@ -142,6 +141,12 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems: "center",
         flexDirection:'row'
+
+    },
+    background: {
+        width: 200,
+        height: 200,
+        backgroundColor: '#c2cecd'
 
     },
     images: {
