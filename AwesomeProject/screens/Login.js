@@ -3,11 +3,6 @@ import {StyleSheet, TextInput,Text, View, Image, Button, Alert} from 'react-nati
 import { Icon, Header} from 'native-base'
 import {Keyboard} from 'react-native'
 
-
-
-
-
-
 export default class Login extends React.Component {
 
     static navigationOptions = {
@@ -91,12 +86,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
 
     },
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
 
-    },
     input: {
         width: 200,
         height: 44,

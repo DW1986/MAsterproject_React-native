@@ -4,9 +4,6 @@ import { Icon, Header} from 'native-base'
 
 const DURATION = 10000
 
-const {height, width} = Dimensions.get('window')
-
-
 export default class System extends React.Component {
 
     static navigationOptions = {
@@ -127,14 +124,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
 
     },
-    container2: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-
-
     MainContainer: {
         flex: 1,
         justifyContent: 'center',

@@ -2,11 +2,6 @@ import React from 'react';
 import {StyleSheet, Text, View, Image,WebView} from 'react-native';
 import { Icon, Header} from 'native-base'
 
-
-
-
-
-
 export default class Youtube extends React.Component {
 
     static navigationOptions = {
@@ -17,8 +12,6 @@ export default class Youtube extends React.Component {
             />
         ),
     };
-
-
 
     render() {
         return (
@@ -45,8 +38,6 @@ export default class Youtube extends React.Component {
 
         )
     }
-
-
 }
 
 const styles = StyleSheet.create({
@@ -54,12 +45,5 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
 
-    },
-    map: {
-        left:0,
-        right:0,
-        top:0,
-        bottom:0,
-        position: 'absolute'
     }
 });

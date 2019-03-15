@@ -3,10 +3,6 @@ import {StyleSheet, Text, View, Image, SafeAreaView} from 'react-native';
 import { Icon, Header} from 'native-base'
 
 
-
-
-
-
 export default class WelcomeScreen extends React.Component {
 
     static navigationOptions = {
@@ -43,9 +39,6 @@ export default class WelcomeScreen extends React.Component {
 
 
 }
-
-
-
 
 const styles = StyleSheet.create({
     welcome: {

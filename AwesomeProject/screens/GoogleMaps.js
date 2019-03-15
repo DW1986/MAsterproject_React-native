@@ -5,14 +5,9 @@ import MapView from 'react-native-maps'
 
 const {width, height} = Dimensions.get('window')
 
-const SCREEN_HEIGHT = height
-const SCREEN_WIDTH = width
 const ASPECT_RATIO = width / height
 const LATTITUDE_DELTA = 0.0922
 const LONGITUDE_DELTA = LATTITUDE_DELTA * ASPECT_RATIO
-
-
-
 
 export default class GoogleMaps extends React.Component {
 
@@ -61,8 +56,6 @@ export default class GoogleMaps extends React.Component {
         }
 
 
-
-
     render() {
         return (
             <View style={styles.container}>
@@ -82,12 +75,8 @@ export default class GoogleMaps extends React.Component {
                         coordinate={this.state.markerPosition}>
                     </MapView.Marker>
                     </MapView>
-
-
                 </View>
-
             </View>
-
         )
     }
 

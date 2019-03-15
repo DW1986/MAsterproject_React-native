@@ -1,11 +1,6 @@
 import React from 'react'
 import { StyleSheet, Picker, View, TextInput, Button, Text,Image } from 'react-native'
 import { Icon, Header} from 'native-base'
-import MapView from 'react-native-maps'
-
-
-
-
 
 export default class Text_to_Speech extends React.Component {
 
@@ -26,8 +21,6 @@ export default class Text_to_Speech extends React.Component {
             />
         ),
     };
-
-
 
     render() {
         return (

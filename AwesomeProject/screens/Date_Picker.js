@@ -5,10 +5,6 @@ import DateTimePicker from 'react-native-modal-datetime-picker'
 import moment from 'moment'
 import 'moment/locale/de'
 
-
-
-
-
 export default class Date_Picker extends React.Component {
 
     static navigationOptions = {

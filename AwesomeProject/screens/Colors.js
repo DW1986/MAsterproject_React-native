@@ -2,11 +2,6 @@ import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity, Button} from 'react-native';
 import { Icon, Header} from 'native-base'
 
-
-
-
-
-
 export default class Colors extends React.Component {
     constructor(props) {
         super(props)
@@ -38,7 +33,6 @@ export default class Colors extends React.Component {
                       source={require('../assets/Buttons/Button_blau_one.png')}/>
     }
 
-
     renderGreen() {
         if (this.state.value === 3)
             return <Image style={styles.images}
@@ -46,7 +40,6 @@ export default class Colors extends React.Component {
         return <Image style={styles.images}
                       source={require('../assets/Buttons/Button_gruen_one.png')}/>
     }
-
 
 changeState(){
 
@@ -68,10 +61,6 @@ changeState(){
     }
 }
 
-
-
-
-
     render() {
 
         return (
@@ -87,43 +76,26 @@ changeState(){
 
                 <View style={styles.container2}>
                     <View style={styles.container}>
-
-
                             <TouchableOpacity onPress={() =>this.changeState()}>
-
-
-                            <View>
-                                <Image
+                                 <View>
+                                     <Image
                                     source={this.state.leinwand}
                                     style={styles.images}
-                                />
-
-                        </View>
-
-
-
-
-
-
-
+                                      />
+                                  </View>
                             </TouchableOpacity>
-
-
-
-
-
                      </View>
 
-                    <View style={styles.container}>
-                        <TouchableOpacity onPress={() => this.setState({value:1})}>
+                <View style={styles.container}>
+                    <TouchableOpacity onPress={() => this.setState({value:1})}>
                             {this.renderRed()}
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.setState({value: 2})}>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.setState({value: 2})}>
                             {this.renderBlue()}
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.setState({value: 3})}>
+                     </TouchableOpacity>
+                     <TouchableOpacity onPress={() => this.setState({value: 3})}>
                             {this.renderGreen()}
-                        </TouchableOpacity>
+                     </TouchableOpacity>
                     </View>
                 </View>
             </View>
@@ -143,23 +115,10 @@ const styles = StyleSheet.create({
         flexDirection:'row'
 
     },
-    background: {
-        width: 200,
-        height: 200,
-        backgroundColor: '#c2cecd'
-
-    },
     images: {
       width: 60,
       height: 60,
       margin: 20
-    },
-    map: {
-        left:0,
-        right:0,
-        top:0,
-        bottom:0,
-        position: 'absolute'
     },
     container2: {
         flex: 2,

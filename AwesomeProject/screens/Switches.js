@@ -3,9 +3,6 @@ import {AppRegistry, StyleSheet, Text, View, Slider, Switch, Alert, Image} from 
 import { Icon, Header} from 'native-base'
 
 
-
-
-
 export default class Switches extends React.Component {
 
     static navigationOptions = {
@@ -72,9 +69,7 @@ export default class Switches extends React.Component {
                         style={{marginBottom: 10}}
                         value={this.state.SwitchOnValueHolder}/>
                 </View>
-
             </View>
-
         )
     }
 
@@ -86,12 +81,5 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
 
-    },
-    map: {
-        left:0,
-        right:0,
-        top:0,
-        bottom:0,
-        position: 'absolute'
     }
 });

@@ -1,15 +1,9 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, Image, CameraRoll } from 'react-native';
 import { Camera, Permissions, ImagePicker } from 'expo';
-import {NavigationActions} from 'react-navigation';
 import Ionicon from 'react-native-vector-icons/Ionicons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import {Header, Icon} from "native-base";
-
-
-
-
-
 
 export default class CameraExample extends React.Component {
 
