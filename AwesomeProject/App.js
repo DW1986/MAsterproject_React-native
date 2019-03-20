@@ -14,43 +14,39 @@ import Text_to_Speech from './screens/Text_to_Speech';
 import YouTube from './screens/YouTube';
 import Colors from './screens/Colors';
 
-
-
-
-
-
-
-
 export default class App extends React.Component {
 
   render() {
     return (
-
 
         <DrawNavigator />
   );
   }
 }
 const CustomDrawerComponent = (props) => (
+    <View style={StyleSheet.absoluteFill}>
     <SafeAreaView>
         <View style={{height: 150, backgroundColor: 'white',alignItems: 'center', justifyContent: 'center' }}>
             <Image source={require('./assets/HTWK_Logo_RGB.jpg')} style={{height: 70, width: 134}}/>
         </View>
-        <ScrollView>
-            <DrawerItems {...props} />
-        </ScrollView>
     </SafeAreaView>
+    <ScrollView>
+            <DrawerItems {...props} />
+    </ScrollView>
+    </View>
+
+
 )
 const DrawNavigator = createDrawerNavigator({
-    Welcome:WelcomeScreen,
-    GoogleMaps:GoogleMaps,
-    Einfärben:Colors,
-    Login:Login,
-    Kamera:CameraExample,
+    "Welcome":WelcomeScreen,
+    "GoogleMaps":GoogleMaps,
+    "Einfärben":Colors,
+    "Login":Login,
+    "Kamera":CameraExample,
     "Text To Speech":Text_to_Speech,
     "Date Picker":Date_Picker,
-    Systemfunktionen:System,
-    YouTube:YouTube,
+    "Systemfunktionen":System,
+    "YouTube":YouTube,
     "Regler/Schalter":Switches
 
 
