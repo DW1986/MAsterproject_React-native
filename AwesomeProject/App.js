@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View, SafeAreaView, ScrollView, Image, Platform, Keyboard} from 'react-native';
 import { createDrawerNavigator,DrawerItems } from 'react-navigation'
-import { StackNavigator } from 'react-navigation';
+
 
 import WelcomeScreen from './screens/WelcomeScreen';
 import GoogleMaps from './screens/GoogleMaps';
@@ -18,11 +18,11 @@ export default class App extends React.Component {
 
   render() {
     return (
-
-        <DrawNavigator />
-  );
+        <DrawNavigator/>
+        );
   }
 }
+
 const CustomDrawerComponent = (props) => (
     <View style={StyleSheet.absoluteFill}>
     <SafeAreaView>
@@ -35,8 +35,8 @@ const CustomDrawerComponent = (props) => (
     </ScrollView>
     </View>
 
-
 )
+
 const DrawNavigator = createDrawerNavigator({
     "Welcome":WelcomeScreen,
     "GoogleMaps":GoogleMaps,
@@ -49,15 +49,13 @@ const DrawNavigator = createDrawerNavigator({
     "YouTube":YouTube,
     "Regler/Schalter":Switches
 
-
 },{
     contentComponent: CustomDrawerComponent,
     contentOptions: {
         activeTintColor: "orange"
-    }
+
+    },
 })
-
-
 
 const styles = StyleSheet.create({
   welcome: {

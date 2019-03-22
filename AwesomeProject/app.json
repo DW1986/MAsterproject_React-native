@@ -25,7 +25,16 @@
       "bundleIdentifier": "com.HTWK.Masterproject"
     },
     "android": {
-      "package": "com.HTWK.Masterproject"
+      "package": "com.HTWK.Masterproject",
+      "versionCode": 3,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_INTERNAL_STORAGE",
+        "android.permission.WRITE_INTERNAL_STORAGE"
+      ]
+
     }
   }
 }
